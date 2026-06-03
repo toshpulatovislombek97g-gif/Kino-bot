@@ -16,14 +16,14 @@ file_id TEXT
 )
 """)
 
-db.commit()
+  db.commit()
 
 def add_user(user_id):
 cursor.execute(
 "INSERT OR IGNORE INTO users (user_id) VALUES (?)",
 (user_id,)
 )
-db.commit()
+  db.commit()
 
 def get_users_count():
 cursor.execute("SELECT COUNT(*) FROM users")
@@ -34,7 +34,7 @@ cursor.execute(
 "INSERT OR REPLACE INTO movies VALUES (?, ?)",
 (code, file_id)
 )
-db.commit()
+  db.commit()
 
 def get_movie(code):
 cursor.execute(
@@ -49,4 +49,4 @@ cursor.execute(
 "DELETE FROM movies WHERE code=?",
 (code,)
 )
-db.commit()
+  db.commit()
